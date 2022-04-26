@@ -30,7 +30,7 @@ How-to-use:
 
 Credits:
 - Maria Jimenez
-- RJ
+- RJ *********
 - *** Mubarek Hassen
 - Andy Manes
 
