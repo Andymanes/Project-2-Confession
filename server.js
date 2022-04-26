@@ -30,10 +30,10 @@ app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false }))
 
 
-app.use('/login', controllers.user) 
-app.use('/register', controllers.user) 
-app.use('/new', controllers.secret)
-app.use('/comment', controllers.comment)
+// app.use('/login', controllers.user) 
+// app.use('/register', controllers.user) 
+// app.use('/new', controllers.secret)
+// app.use('/comment', controllers.comment)
 
 
 app.get('/', (request, response) => response.send('Welcome to Confessions!'))
