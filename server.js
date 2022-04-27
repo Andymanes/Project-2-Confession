@@ -34,6 +34,11 @@ app.use('/users', controllers.users)
 app.use('/users', controllers.users) 
 // app.use('/new', controllers.secret)
 app.use('/comment', controllers.comments)
+// app.use('/login', controllers.users) 
+// app.use('/users', controllers.users) 
+// app.use('/new', controllers.secrets)
+// app.use('/comments', controllers.comments)
+app.use('/secrets', controllers.secrets)
 
 
 app.get('/', (request, response) => response.send('Welcome to Confessions!'))
