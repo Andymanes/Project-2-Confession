@@ -30,7 +30,7 @@ app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false }))
 
 
-// app.use('/login', controllers.user) 
+app.use('/login', controllers.users) 
 app.use('/users', controllers.users) 
 // app.use('/new', controllers.secret)
 // app.use('/comment', controllers.comment)
