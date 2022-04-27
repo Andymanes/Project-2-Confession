@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="#" />
+    <script src = "/server.js" defer></script>
+    <title>Confessions</title>
+</head>
+<body>
+    <h1> Make a Confession</h1> 
+    <h2 class="posts">Recent Posts</h2>
+    <div class = "secretcontainer">
+        <% for(let idx = 0; idx < secretSchema.length; idx++){ %> 
+			<% const secrets = secretSchema.content[idx] %>
+            <div>Container 1
+                    <p>$<%= secretSchema.content %></p>
+            </div>
+            <div>Container 2</div>
+            <div>Container 3</div>
+            <div>Container 4</div>
+            <div>Container 5</div>
+            <div>Container 6</div>
+            <div>Container 7</div>
+            <div>Container 8</div>
+    </div>
+
+    
+</body>
+</html>
