@@ -2,7 +2,7 @@ const express = require('express')
 const methodOverride = require('method-override')
 const controllers = require('./controllers')
 const app = express()
-
+const router = require('./controllers')
 
 // db connection
 require('./config/db.connection')
@@ -30,6 +30,10 @@ app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false }))
 
 
+app.use('/users', controllers.users) 
+app.use('/users', controllers.users) 
+// app.use('/new', controllers.secret)
+app.use('/comment', controllers.comments)
 // app.use('/login', controllers.users) 
 // app.use('/users', controllers.users) 
 // app.use('/new', controllers.secrets)
