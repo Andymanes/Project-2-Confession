@@ -4,27 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="#" />
-    <script src = "/server.js" defer></script>
-    <title>Confessions</title>
+    <title>Document</title>
 </head>
 <body>
-    Route is working
-    
-    <!-- <h1> Make a Confession</h1> 
-    <h2 class="posts">Recent Posts</h2>
-    <div class = "secretcontainer">
-       
-            </div>
-            <div>Container 2</div>
-            <div>Container 3</div>
-            <div>Container 4</div>
-            <div>Container 5</div>
-            <div>Container 6</div>
-            <div>Container 7</div>
-            <div>Container 8</div>
-    </div> -->
 
-    
+    <section>
+        <div>
+            <h2 class="title">Confessions</h2>
+        </div>
+    </section>
+
+    <main class="container">
+        <div>
+            <div>
+              
+               <h1>This is our secret index</h1>
+
+               <% for(let idx=0; idx < secrets.length; idx++){ %>
+                <% const secret=secrets[idx]  %>
+                <h1>Hello World</h1>
+                <% } %>
+
+
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>
