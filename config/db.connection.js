@@ -13,7 +13,7 @@ mongoose.connection.on('connected', ()=>{
 
 
 mongoose.connection.on('error', ()=>{
-    console.log(`it have an error`, error)
+    console.log(`it have an error ${error}`)
 })
 
 mongoose.connection.on('disconnected', ()=>{
