@@ -21,8 +21,10 @@
                <h1>This is our secret index</h1>
 
                <% for(let idx=0; idx < secrets.length; idx++){ %>
-                <% const secret=secrets[idx]  %>
-                <h1>Hello World</h1>
+                <% const secret = secrets[idx]  %>
+                <h1><%=secrets[idx].content%></h1>
+                <!-- <h1><%=secrets[idx].category%</h1>
+                <h1><%=secrets[idx].confessor%</h1> -->
                 <% } %>
 
 
