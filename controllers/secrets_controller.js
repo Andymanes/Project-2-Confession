@@ -106,7 +106,7 @@ router.get('/:id/edit', async (req,res, next)=>{
 
 router.post('/', async (req, res, next) => {
     try {
-        // console.log(`The req.body is ${req.body}`)
+        // console.log(req.body)
         const createdSecret = await db.Secret.create(req.body);
         console.log(`The created product is ${createdSecret}`)
         res.redirect('/secrets');
