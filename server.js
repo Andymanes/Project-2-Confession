@@ -2,7 +2,7 @@ const express = require('express')
 const methodOverride = require('method-override')
 const controllers = require('./controllers')
 const app = express()
-const router = require('./controllers')
+// const controllers = require('./controllers')
 
 // db connection
 require('./config/db.connection')
@@ -29,22 +29,15 @@ app.use(methodOverride('_method'))
 
 app.use(express.urlencoded({ extended: false }))
 
-
+// const userController = require('./controllers/users_controller')
 app.use('/users', controllers.users) 
-app.use('/users', controllers.users) 
-// app.use('/new', controllers.secret)
 app.use('/comment', controllers.comments)
-// app.use('/login', controllers.users) 
-// app.use('/users', controllers.users) 
-// app.use('/new', controllers.secrets)
-// app.use('/comments', controllers.comments)
+app.use('/new', controllers.secrets)
+app.use('/comments', controllers.comments)
 app.use('/secrets', controllers.secrets)
 
 
 app.get('/', (request, response) => response.send('Welcome to Confessions!'))
-
-
-
 
 
 
