@@ -31,13 +31,12 @@ app.use(express.urlencoded({ extended: false }))
 
 
 // app.use('/login', controllers.user) 
-app.use('/users', controllers.users) 
+// app.use('/users', controllers.users) 
 // app.use('/new', controllers.secret)
-// app.use('/comment', controllers.comment)
+app.use('/comment', controllers.comments)
 
 
 app.get('/', (request, response) => response.send('Welcome to Confessions!'))
-// app.get('/register', (request, response) => response.render('register.ejs'))
 
 
 
