@@ -1,6 +1,6 @@
-module.exports = {
-    users: require('./user_controller'),
-    Comment: require('./comment_controller'),
-    Secrets: require('./secret_controller')
 
-}
+console.log('testing controllers')
+
+
+
+module.exports = {users: require('./user_controller')}
