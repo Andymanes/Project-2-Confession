@@ -116,9 +116,9 @@
 // router.post('/', async (req, res, next) => {
 //     try {
 //         // console.log(`The req.body is ${req.body}`)
-//         const createdProduct = await db.Product.create(req.body);
-//         console.log(`The created product is ${createdProduct}`)
-//         res.redirect('/products');
+//         const createdSecret = await db.Secret.create(req.body);
+//         console.log(`The created product is ${createdSecret}`)
+//         res.redirect('/confessions');
 //     } catch (error) {
 //         console.log(error);
 //         req.error = error;
@@ -128,16 +128,16 @@
 
 
 
-// // Products "destroy" route - DELETE request - removes data from products database and redirects to index route
+// // Products "destroy" route - DELETE request - removes data from secrets database and redirects to index route
 
 // // http://localhost:4000/products/0/ 
 
 // router.delete('/:id', async (req,res, next)=>{
 //     try {
-//         const deletedProduct = await db.Product.findByIdAndDelete(req.params.id);
+//         const deletedSecret = await db.Secret.findByIdAndDelete(req.params.id);
 //         // delete one product (req.params.id)
 //         // find all reviews where product == req.params.id | delete those as well
-//         const deletedReviews = await db.Review.deleteMany({product: req.params.id})
+//         const deletedSecret = await db.Secret.deleteMany({product: req.params.id})
 //         // confirming the deletion of reviews 
 //         // 'orphan' documents in our reviews collection are removed
 
