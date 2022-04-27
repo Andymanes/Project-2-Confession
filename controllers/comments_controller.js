@@ -4,7 +4,6 @@ const router = express.Router()
 
 const db = require('../models')
 
-
 // router.get('/', async (req,res,next)=>{
 //     try {
 //         const allSecrets = await db.Secret.find({})

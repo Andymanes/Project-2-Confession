@@ -31,11 +31,13 @@ app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false }))
 
 
-app.use('/login', controllers.users) 
 // app.use('/users', controllers.users) 
-// app.use('/new', controllers.secret)
-app.use('/comment', controllers.comments)
-// app.use('/comment', commentsRoute)
+// app.use('/new', controllers.secrets)
+// app.use('/comment', controllers.comments)
+// app.use('/login', controllers.users) 
+// app.use('/users', controllers.users) 
+// app.use('/comments', controllers.comments)
+app.use('/secrets', controllers.secrets)
 
 
 app.get('/', (req, res) => res.send('Welcome to Confessions!'))
