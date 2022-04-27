@@ -33,7 +33,12 @@ router.get('/login', async (req, res, next) => {
     }
 });
 
-
+router.post('/login', (req, res) => {
+    // Insert Login Code Here
+    let username = req.body.username;
+    let password = req.body.password;
+    res.send(`Username: ${username} Password: ${password}`);
+  });
 
 
 module.exports = router
