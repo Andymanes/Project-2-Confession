@@ -31,10 +31,10 @@ app.use(express.urlencoded({ extended: false }))
 
 
 // app.use('/login', controllers.users) 
-app.use('/users', controllers.users) 
+// app.use('/users', controllers.users) 
 // app.use('/new', controllers.secrets)
 // app.use('/comments', controllers.comments)
-app.use('/secrets', secrets_controller)
+app.use('/secrets', controllers.secrets)
 
 
 app.get('/', (request, response) => response.send('Welcome to Confessions!'))

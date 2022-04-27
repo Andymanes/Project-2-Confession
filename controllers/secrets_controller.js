@@ -32,12 +32,12 @@ router.get('/', async (req, res, next) => {
         const secrets = await db.Secret.find({});
         const context = { secrets }
         console.log(secrets);
-        return res.render('index.ejs', context);
-    } catch (error) {
+        res.render('index.ejs', context);
+} catch (error) {
         console.log(error);
         req.error = error;
-        return next();
-    }
+       return next();
+ }
 });
 
 // Secrets "new" route - GET request- displays form for creating a new secret
