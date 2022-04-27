@@ -2,7 +2,7 @@ const express = require('express')
 const methodOverride = require('method-override')
 const controllers = require('./controllers')
 const app = express()
-
+const router = require('./controllers')
 
 // db connection
 require('./config/db.connection')
@@ -31,12 +31,13 @@ app.use(express.urlencoded({ extended: false }))
 
 
 // app.use('/login', controllers.user) 
-// app.use('/register', controllers.user) 
+app.use('/users/register', controllers.users)
 // app.use('/new', controllers.secret)
 // app.use('/comment', controllers.comment)
 
 
 app.get('/', (request, response) => response.send('Welcome to Confessions!'))
+// app.get('/register', (request, response) => response.render('register.ejs'))
 
 
 
