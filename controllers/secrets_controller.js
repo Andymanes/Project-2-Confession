@@ -31,7 +31,7 @@ router.get('/', async (req, res, next) => {
     try {
         const secrets = await db.Secret.find({});
         const context = { secrets }
-        console.log(secrets);
+        // console.log(secrets);
         res.render('index.ejs', context);
 } catch (error) {
         console.log(error);
@@ -46,7 +46,7 @@ router.get('/', async (req, res, next) => {
         const foundSecret = await db.Secret.findById(req.params.id)
         const context = { 
             oneSecret: foundSecret}
-        console.log(foundSecret);
+        // console.log(foundSecret);
         res.render('index.ejs', context);
 } catch (error) {
         console.log(error);
@@ -84,21 +84,6 @@ router.get('/:id/', async (req, res, next) => {
     }
 })
 
-//Get Route for Edit Path in Index.ejs
-router.get('/:id/', async (req, res, next) => {
-    try {
-        const foundSecret = await db.Secret.findById(req.params.id)
-        const context = { 
-            oneSecret: foundSecret,
-            message: "Edit Your Secret"
-        }
-        return res.render('index.ejs', context)
-    } catch (error) {
-        console.log(error);
-        req.error = error;
-        return next();
-    }
-})
 
 
 // Secrets "edit" route - GET request - display an edit form for one secret
@@ -164,11 +149,7 @@ router.delete('/:id', async (req,res, next)=>{
         const deletedSecret = await db.Secret.findByIdAndDelete(req.params.id);
         // delete one secret (req.params.id)
         // find all comments where secret == req.params.id | delete those as well
-        const deletedComments = await db.Comment.deleteMany({secret: req.params.id})
-        // confirming the deletion of comments 
-        // 'orphan' documents in our comments collection are removed
-
-        console.log(deletedSecret);
+        // const deletedComments = await db.Comment.deleteMany({secret: req.params.id})
         return res.redirect('/secrets')
     } catch (error) {
         console.log(error);
@@ -185,7 +166,7 @@ router.delete('/:id', async (req,res, next)=>{
 router.put('/:id', async (req, res, next)=>{
     try {
         const updatedSecret = await db.Secret.findByIdAndUpdate(req.params.id, req.body);
-        console.log(updatedSecret);
+        // console.log(updatedSecret);
         return res.redirect(`/secrets`)
     } catch (error) {
         console.log(error);
@@ -193,6 +174,24 @@ router.put('/:id', async (req, res, next)=>{
         return next();
     }
 })
+
+// Comments "create" route - PUT request - update the Comments array and redirects to index route
+// http://localhost:4000/secrets
+
+router.post('/comment', async (req, res, next)=>{
+    try {
+        const newCreatedComment = req.body
+        const createdComment = await db.Comment.create(newCreatedComment)
+        // console.log(createdComment)
+        res.redirect('/secrets')
+
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
+
 
 
 module.exports = router

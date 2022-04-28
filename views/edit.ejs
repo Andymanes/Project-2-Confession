@@ -23,7 +23,11 @@
             <div>
                 <input type="submit" value="Edit Secret: <%= secret.content%>"/>
             </div>
-        </form>
-    </div>
+            </form>
+            <div>
+                <form method="POST" action="/secrets/<%= secret._id%>?_method=DELETE">  
+                    <input type="submit" value="Delete Secret"/>
+                </form>
+            </div>
 </body>
 </html>

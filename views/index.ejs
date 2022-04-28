@@ -28,6 +28,11 @@
                 <a href="/secrets/<%= secrets[idx]._id %>/edit">Edit <%= secrets[idx].content %></a>
                 <a href="/secrets/<%=secrets[idx]._id%>"><%= secrets[idx].confessor %> Comment Here</a>
                 <div>
+                    <form method="POST" action="/secrets/<%= secret._id%>?_method=DELETE">  
+                        <input type="submit" value="Delete Secret"/>
+                    </form>
+                </div>
+                <div>
                
                 </div>
     
