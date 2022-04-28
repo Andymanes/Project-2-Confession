@@ -137,7 +137,13 @@ router.get('/:id/edit', async (req,res, next)=>{
 router.post('/', async (req, res, next) => {
     try {
         // console.log(req.body)
-        const createdSecret = await db.Secret.create(req.body);
+        const userSecret = await db.User.find({username: req.body.username})
+        const newSecret = {
+            confessor: userSecret._id, 
+            content: req.body.content,
+            category: req.body.category
+        }
+        const createdSecret = await db.Secret.create(newSecret);
         console.log(`The created product is ${createdSecret}`)
         res.redirect('/secrets');
     } catch (error) {
