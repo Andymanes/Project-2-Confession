@@ -40,6 +40,21 @@ router.get('/', async (req, res, next) => {
  }
 });
 
+
+router.get('/', async (req, res, next) => {
+    try {
+        const foundSecret = await db.Secret.findById(req.params.id)
+        const context = { 
+            oneSecret: foundSecret}
+        console.log(foundSecret);
+        res.render('index.ejs', context);
+} catch (error) {
+        console.log(error);
+        req.error = error;
+       return next();
+ }
+});
+
 // Secrets "new" route - GET request- displays form for creating a new secret
 
 router.get('/new', (req, res) => {
@@ -59,7 +74,7 @@ router.get('/:id/', async (req, res, next) => {
         const context = { 
             oneSecret: foundSecret,
             // comments: allComments,
-            message: "Add Your Comment for This Secret or Edit Your Secret"
+            message: "Join the Discourse- Add a Comment!"
         }
         return res.render('show.ejs', context)
     } catch (error) {
@@ -69,6 +84,21 @@ router.get('/:id/', async (req, res, next) => {
     }
 })
 
+//Get Route for Edit Path in Index.ejs
+router.get('/:id/', async (req, res, next) => {
+    try {
+        const foundSecret = await db.Secret.findById(req.params.id)
+        const context = { 
+            oneSecret: foundSecret,
+            message: "Edit Your Secret"
+        }
+        return res.render('index.ejs', context)
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
 
 
 // Secrets "edit" route - GET request - display an edit form for one secret
