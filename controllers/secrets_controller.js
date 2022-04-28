@@ -41,19 +41,19 @@ router.get('/', async (req, res, next) => {
 });
 
 
-router.get('/', async (req, res, next) => {
-    try {
-        const foundSecret = await db.Secret.findById(req.params.id)
-        const context = { 
-            oneSecret: foundSecret}
-        console.log(foundSecret);
-        res.render('index.ejs', context);
-} catch (error) {
-        console.log(error);
-        req.error = error;
-       return next();
- }
-});
+// router.get('/', async (req, res, next) => {
+//     try {
+//         const foundSecret = await db.Secret.findById(req.params.id)
+//         const context = { 
+//         oneSecret: foundSecret}
+//         // console.log(foundSecret);
+//         res.render('index.ejs',);
+// } catch (error) {
+//         console.log(error);
+//         req.error = error;
+//        return next();
+//  }
+// });
 
 // Secrets "new" route - GET request- displays form for creating a new secret
 
@@ -139,12 +139,12 @@ router.post('/', async (req, res, next) => {
         // console.log(req.body)
         const userSecret = await db.User.find({username: req.body.username})
         const newSecret = {
-            confessor: userSecret._id, 
+            confessor: req.body.confessor, 
             content: req.body.content,
             category: req.body.category
         }
         const createdSecret = await db.Secret.create(newSecret);
-        console.log(`The created product is ${createdSecret}`)
+        // console.log(`The created product is ${createdSecret}`)
         res.redirect('/secrets');
     } catch (error) {
         console.log(error);

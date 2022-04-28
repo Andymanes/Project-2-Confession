@@ -8,14 +8,14 @@ const secretSchema = new mongoose.Schema({
     },
     category: {
         type: String,
-        required: [true, 'price cannot be empty!']
+        required: [true, 'category cannot be empty!']
     },
-    confessor:{
-        type: mongoose.Types.ObjectId,
-        ref: 'User'
-    }
-    // username:{
-    //     type: mongoose.Types.ObjectId.username,
+    confessor: {
+        type: String,
+        // ref: 'User'
+    },
+    // username: {
+    //     type: mongoose.Types.ObjectId,
     //     ref: 'User'
     // }
 },
