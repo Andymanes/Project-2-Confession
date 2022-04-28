@@ -31,7 +31,7 @@ app.use(express.urlencoded({ extended: false }))
 
 // const userController = require('./controllers/users_controller')
 app.use('/users', controllers.users) 
-app.use('/comment', controllers.comments)
+// app.use('/comment', controllers.comments)
 app.use('/new', controllers.secrets)
 app.use('/comments', controllers.comments)
 app.use('/secrets', controllers.secrets)
