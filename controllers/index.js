@@ -11,4 +11,3 @@ module.exports = {
     secrets:  require('./secrets_controller'),
     comments: require('./comments_controller')
 }
-
