@@ -8,19 +8,21 @@ const db = require('../models')
 
 
 router.get('/register',  (req, res,) => {
-//     try {
-    //         const newUser = await db.User.find({});
-    //         const context = { newUser }
-    //         // console.log(newUser);
-    //         res.render('register.ejs',);
-    //     } catch (error) {
-        //         console.log(error);
-        //         req.error = error;
-        //        return next();
-        //  }
-     res.render('register.ejs')
+    res.render('register.ejs')
 });
-        
+
+router.post('/register', async (req, res, next) => {
+    try {
+        const newUser = await db.User.create(req.body);
+        // console.log(req.body)
+        console.log(newUser)
+        res.redirect('/users/register');
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
         
         
         
@@ -38,7 +40,7 @@ router.get('/register',  (req, res,) => {
 // });
 
 
-// router.post('/', (req, res) => {
+// router.post('/login', (req, res) => {
 //     // Insert Login Code Here
 //     let username = req.body.username;
 //     let password = req.body.password;
@@ -47,17 +49,5 @@ router.get('/register',  (req, res,) => {
 // });
 
 
-router.post('/register', async (req, res, next) => {
-    try {
-        const newUser = await db.User.create(req.body);
-        // console.log(req.body)
-        console.log(newUser)
-        res.redirect('/users/register');
-    } catch (error) {
-        console.log(error);
-        req.error = error;
-        return next();
-    }
-})
 
 module.exports = router
