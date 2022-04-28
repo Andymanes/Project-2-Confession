@@ -108,7 +108,7 @@ router.post('/', async (req, res, next) => {
     try {
         // console.log(req.body)
         const createdSecret = await db.Secret.create(req.body);
-        console.log(createdSecret)
+        console.log(`The created product is ${createdSecret}`)
         res.redirect('/secrets');
     } catch (error) {
         console.log(error);
