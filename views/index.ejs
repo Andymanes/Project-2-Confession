@@ -24,7 +24,7 @@
                 <% const secret = secrets[idx]  %>
                 <h1>category: <%=secrets[idx].category%></h1>
                 <h1>secret: <%=secrets[idx].content%> </h1>
-                <h1><a href="></a><%=secrets[idx].confessor%>"><%=secrets[idx].confessor%></a></h1>
+                <h1><%=secrets[idx].confessor%></h1>
                 <a href="/secrets/<%= secrets[idx]._id %>/edit">Edit</a>
                 <a href="/secrets/<%=secrets[idx]._id%>">Comment</a>
                 <div>
