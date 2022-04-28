@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('partials/head.ejs', { pageName: oneProduct.name }) %>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Comment</title>
+</head>
 <body>
-    <%- include('partials/nav.ejs')%>
-    <h1>Show Page</h1>
-    <p><%= message %></p>
-    <!-- product object referenced by oneProduct -->
-    <h2><%= oneProduct.name %></h2>
-    <small><%= oneProduct.price %></small>
-    <img class="show-image" src="<%=oneProduct.image%>" alt="<%=oneProduct.name %>"/>
-    <div>
-        <a href="/products/<%= oneProduct._id %>/edit">Edit <%= oneProduct.name %></a>
-    </div>
-</body>
-</html>
+  <h1>Show Page</h1>
+  <p><%= message %></p>
+  <!-- secret object referenced by oneSecret -->
+  <h2><%= oneSecret.content %></h2>
+  <small><%= oneSecret.category %></small>
+  
+
+  <section>
+      <h2>Comments</h2>
+      <div>
+          <h3>Add a Comment:</h3>
+          <!-- form here -->
+          <form method="POST" action="/comments">
+              <input name="rating" type="number"/>
+              <input name="content" type="text" />
+              <input type="hidden" name="secret" value="<%=oneSecret.id%>"/>
+              <input type="hidden" name="user" value="<%=oneSecret.id%>"/>
+              <input type="submit" value="Share your thoughts..."/>
+          </form>
+      </div>
+      <% console.log("id", oneSecret.id) %>
+      <% console.log("_id", oneSecret._id) %>
+      
