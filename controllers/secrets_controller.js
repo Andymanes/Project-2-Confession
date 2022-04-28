@@ -59,7 +59,7 @@ router.get('/:id/', async (req, res, next) => {
         const context = { 
             oneSecret: foundSecret,
             // comments: allComments,
-            message: "Add Your Comment for This Secret"
+            message: "Add Your Comment for This Secret or Edit Your Secret"
         }
         return res.render('show.ejs', context)
     } catch (error) {
