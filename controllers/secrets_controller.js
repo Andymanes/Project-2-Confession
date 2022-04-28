@@ -32,21 +32,6 @@ router.get('/', async (req, res, next) => {
 });
 
 
-<<<<<<< HEAD
-router.get('/', async (req, res, next) => {
-    try {
-        const foundSecret = await db.Secret.findById(req.params.id)
-        const context = { 
-            oneSecret: foundSecret}
-        console.log(foundSecret);
-        res.render('index.ejs', context);
-} catch (error) {
-        console.log(error);
-        req.error = error;
-       return next();
- }
-});
-=======
 // router.get('/', async (req, res, next) => {
 //     try {
 //         const foundSecret = await db.Secret.findById(req.params.id)
@@ -61,7 +46,6 @@ router.get('/', async (req, res, next) => {
 //  }
 // });
 
->>>>>>> main
 // Secrets "new" route - GET request- displays form for creating a new secret
 router.get('/new', (req, res) => {
     res.render('new.ejs')
