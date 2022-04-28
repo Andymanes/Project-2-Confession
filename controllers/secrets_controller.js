@@ -30,10 +30,12 @@ router.get('/', async (req, res, next) => {
        return next();
  }
 });
+
+
 router.get('/', async (req, res, next) => {
     try {
         const foundSecret = await db.Secret.findById(req.params.id)
-        const context = {
+        const context = { 
             oneSecret: foundSecret}
         console.log(foundSecret);
         res.render('index.ejs', context);
@@ -54,7 +56,7 @@ router.get('/:id/', async (req, res, next) => {
         const foundSecret = await db.Secret.findById(req.params.id)
         // const allComments = await db.Comment.find({secret: req.params.id})
         // console.log(allComments.length, 'Comments Found');
-        const context = {
+        const context = { 
             oneSecret: foundSecret,
             // comments: allComments,
             message: "Join the Discourse- Add a Comment!"
@@ -70,7 +72,7 @@ router.get('/:id/', async (req, res, next) => {
 router.get('/:id/', async (req, res, next) => {
     try {
         const foundSecret = await db.Secret.findById(req.params.id)
-        const context = {
+        const context = { 
             oneSecret: foundSecret,
             message: "Edit Your Secret"
         }
@@ -81,6 +83,8 @@ router.get('/:id/', async (req, res, next) => {
         return next();
     }
 })
+
+
 // Secrets "edit" route - GET request - display an edit form for one secret
 // http://localhost:4000/secrets/0/edit
 router.get('/:id/edit', async (req,res, next)=>{
@@ -111,7 +115,7 @@ router.post('/', async (req, res, next) => {
         // console.log(req.body)
         const userSecret = await db.User.find({username: req.body.username})
         const newSecret = {
-            confessor: userSecret._id,
+            confessor: userSecret._id, 
             content: req.body.content,
             category: req.body.category
         }
