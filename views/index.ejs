@@ -22,7 +22,10 @@
 
                <% for(let idx=0; idx < secrets.length; idx++){ %>
                 <% const secret=secrets[idx]  %>
-                <h1>Hello World</h1>
+                <h1><%=secrets[idx].content%>></h1>
+                <h1><%=secrets[idx].category%></h1>
+                <h1><%=secrets[idx].confessor%></h1>
+                <a href="/secrets/<%=secrets%>/comments">Add comment</a>
                 <% } %>
 
 

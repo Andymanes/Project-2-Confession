@@ -11,13 +11,27 @@ router.get('/register', async (req, res, next) => {
         const newUser = await db.User.find({});
         const context = { newUser }
         console.log(newUser);
-        return res.render('register.ejs', context);
+        res.render('register.ejs', context);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+       return next();
+ }
+});
+
+router.post('/register', async (req, res, next) => {
+    try {
+        // console.log(req.body)
+        const newUser = await db.User.create(req.body);
+        console.log(newUser)
+        res.redirect('/users/login');
     } catch (error) {
         console.log(error);
         req.error = error;
         return next();
     }
-});
+})
+
 
 
 router.get('/login', async (req, res, next) => {

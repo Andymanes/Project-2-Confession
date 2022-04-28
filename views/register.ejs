@@ -1,51 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=“en”>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset=“UTF-8">
+    <meta http-equiv=“X-UA-Compatible” content=“IE=edge”>
+    <meta name=“viewport” content=“width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body> 
-    <% include ../partials/header %> 
-
-    <div class="container"> 
-        <% if (message.length > 0) { %> 
-            <div class="alert alert-warning alert-dismissible
-               fade in" role="alert"> 
-              <button type="button" class="close" data-dismiss=
-                 "alert" aria-label="Close"> 
-                <span aria-hidden="true">&times;</span> 
-              </button> 
-              <strong>!!</strong> <%= message %> 
-            </div> 
-         <% } %> 
-
-        <form class="form-signin" action="/login" method="post"> 
-
-        <h2 class="form-signin-heading">Please sign in to post confessions</h2> 
-
-<!-- Email info-->
-        <label for="inputEmail" class="email">Email address</label> 
-        <input type="email" id="email" name="email" class="form-
-          signin" placeholder="Email address" required=""> 
-
-<!-- Email info-->
-        <label for="inputPassword" class="password">Password</label> 
-        <input type="password" id="password" name="password"
-         class="form-control" placeholder="Password" required=""> 
-
-<!-- Sign in Button -->         
-        <button class="confessions-signin-button" 
-           type="submit">Sign in</button> 
-        <br> 
-        
-<!-- Diverts User to new account sign in page -->
-        <p>Don't have an account? <a href="/newuser">Signup</a></p> 
-      </form> 
-    </div> 
-
-    <% include ../partials/footer %> 
-    <% include ../partials/javascript %> 
-  </body> 
+<body>
+  <h1>Register Here!</h1>
+  <form action="//members.osiolabs.com/login" method="post">
+      <!-- user input-->
+      Username:<br>
+      <input type="text" name="username" placeholder="username" required><br><br>
+      Password:<br>
+      <input type="password" name="password" placeholder="password" required><br><br>
+      email:<br>
+      <input type="text" name="email" placeholder="email" required><br><br>
+      <!-- submit button -->
+      <input type="submit" value="Create Account">
+  </form>
+</body>
 </html>

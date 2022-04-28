@@ -29,21 +29,11 @@ app.use(methodOverride('_method'))
 
 app.use(express.urlencoded({ extended: false }))
 
-<<<<<<< HEAD
 // const userController = require('./controllers/users_controller')
 app.use('/users', controllers.users) 
 app.use('/comment', controllers.comments)
 app.use('/new', controllers.secrets)
 app.use('/comments', controllers.comments)
-=======
-
-// app.use('/users', controllers.users) 
-// app.use('/new', controllers.secrets)
-// app.use('/comment', controllers.comments)
-// app.use('/login', controllers.users) 
-// app.use('/users', controllers.users) 
-// app.use('/comments', controllers.comments)
->>>>>>> main
 app.use('/secrets', controllers.secrets)
 
 
