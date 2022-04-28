@@ -51,15 +51,15 @@ router.get('/new', (req, res) => {
 // Secrets "show" route - GET request - display details about one secret
 // http://localhost:4000/secrets/0
 
-router.get('/secrets/:id/', async (req, res, next) => {
+router.get('/:id/', async (req, res, next) => {
     try {
         const foundSecret = await db.Secret.findById(req.params.id)
-        const allComments = await db.Comment.find({secret: req.params.id})
-        console.log(allComments.length, 'Comments Found');
+        // const allComments = await db.Comment.find({secret: req.params.id})
+        // console.log(allComments.length, 'Comments Found');
         const context = { 
             oneSecret: foundSecret,
-            comments: allComments,
-            message: "Hello there"
+            // comments: allComments,
+            message: "Add Your Comment for This Secret"
         }
         return res.render('show.ejs', context)
     } catch (error) {
