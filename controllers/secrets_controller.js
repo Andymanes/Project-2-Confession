@@ -46,6 +46,9 @@ router.get('/new', (req, res) => {
     res.render('new.ejs')
 })
 
+router.get('/comment', (req,res)=>{
+    res.render('comment.ejs')
+})
 
 
 // Secrets "show" route - GET request - display details about one secret
@@ -157,6 +160,18 @@ router.put('/:id', async (req, res, next)=>{
         return next();
     }
 })
+router.post('/comment', async (req, res, next)=>{
+    try {
+        const newCreatedComment = req.body
+        const createdComment = await db.Comment.create(newCreatedComment)
+        console.log(createdComment)
+        res.redirect('/secrets')
 
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
 
 module.exports = router
