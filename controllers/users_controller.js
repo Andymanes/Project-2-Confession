@@ -26,13 +26,13 @@ router.post('/register', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
     try {
         const foundUser = await db.User.findById(req.params.id)
-        const allSecrets = await db.Secret.find({secrets: req.params.id})
+        const allSecrets = await db.User.find({secrets: req.params.id})
         const context = {
             thisUser: foundUser,
             secrets: allSecrets
         }
         console.log(foundUser)
-        res.render('profile.ejs', context)
+        return res.render('profile.ejs', context)
     } catch (error) {
         console.log(error);
         req.error = error;
