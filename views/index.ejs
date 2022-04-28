@@ -7,31 +7,28 @@
     <title>Document</title>
 </head>
 <body>
-
     <section>
         <div>
             <h2 class="title">Confessions</h2>
         </div>
     </section>
-
     <main class="container">
         <div>
             <div>
-              
                <h1>This is our secret index</h1>
-
+               <a href="/secrets/new/<%=secrets._id%>"><%= secrets.confessor %> Add Your Secret</a>
                <% for(let idx=0; idx < secrets.length; idx++){ %>
-                <% const secret=secrets[idx]  %>
-                <h1><%=secrets[idx].content%>></h1>
+                <% const secret = secrets[idx]  %>
+                <h1> <%=secrets[idx].content%> </h1>
                 <h1><%=secrets[idx].category%></h1>
                 <h1><%=secrets[idx].confessor%></h1>
-                <a href="/secrets/<%=secrets%>/comments">Add comment</a>
+                <a href="/secrets/<%= secrets[idx]._id %>/edit">Edit <%= secrets[idx].content %></a>
+                <a href="/secrets/<%=secrets[idx]._id%>"><%= secrets[idx].confessor %> Comment Here</a>
+                <div>
+                </div>
                 <% } %>
-
-
             </div>
         </div>
     </main>
 </body>
-
 </html>
