@@ -22,7 +22,7 @@ router.get('/', async (req, res, next) => {
     try {
         const secrets = await db.Secret.find({}).populate('username');
         const context =  {secrets}
-        console.log(secrets.length)
+        // console.log(secrets.length)
         
         res.render('index.ejs', context);
 } catch (error) {
