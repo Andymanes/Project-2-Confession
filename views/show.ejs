@@ -10,8 +10,8 @@
   <h1>Show Page</h1>
   <p><%= message %></p>
   <!-- secret object referenced by oneSecret -->
-  <h2><%= oneSecret.content %></h2>
   <small><%= oneSecret.category %></small>
+  <h2><%= oneSecret.content %></h2>
   
 
   <section>
@@ -19,13 +19,13 @@
       <div>
           <h3>Add a Comment:</h3>
           <!-- form here -->
-          <form method="POST" action="/comments">
-              <input name="rating" type="number"/>
-              <input name="content" type="text" />
-              <input type="hidden" name="secret" value="<%=oneSecret.id%>"/>
-              <input type="hidden" name="user" value="<%=oneSecret.id%>"/>
-              <input type="submit" value="Share your thoughts..."/>
+          <form action=“/secrets/comments” method=“POST”>
+            <select name=“rating” id=“rating”>
+            <option value=“0”>rate</option></select>
+            <input type=“text” name=“content”/>
+            <input type=“submit” value=“Comment” name=“Comments.content”>
           </form>
       </div>
+      
       
       
