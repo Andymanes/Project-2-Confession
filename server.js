@@ -30,9 +30,10 @@ app.use(methodOverride('_method'))
 
 app.use(express.urlencoded({ extended: false }))
 
-// app.use('/comment', controllers.comments)
+
 app.use('/users', controllers.users) 
-app.use('/login', controllers.users)  
+// app.use('/login', controllers.users) 
+// app.use('/comments', controllers.comments)
 app.use('/secrets', controllers.secrets)
 
 

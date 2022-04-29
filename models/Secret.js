@@ -14,6 +14,10 @@ const secretSchema = new mongoose.Schema({
         type: mongoose.Types.ObjectId,
         ref: 'User'
     }
+    // username:{
+    //     type: mongoose.Types.ObjectId.username,
+    //     ref: 'User'
+    // }
 },
     {
         timestamps: true

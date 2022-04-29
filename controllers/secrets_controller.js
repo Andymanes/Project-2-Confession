@@ -40,13 +40,28 @@ router.get('/', async (req, res, next) => {
  }
 });
 
+
+router.get('/', async (req, res, next) => {
+    try {
+        const foundSecret = await db.Secret.findById(req.params.id)
+        const context = { 
+            oneSecret: foundSecret}
+        console.log(foundSecret);
+        res.render('index.ejs', context);
+} catch (error) {
+        console.log(error);
+        req.error = error;
+       return next();
+ }
+});
+
 // Secrets "new" route - GET request- displays form for creating a new secret
 
 router.get('/new', (req, res) => {
     res.render('new.ejs')
 })
 
-router.get('/comment', (req,res)=>{
+router.get('/comments', (req,res)=>{
     res.render('comment.ejs')
 })
 
@@ -54,15 +69,15 @@ router.get('/comment', (req,res)=>{
 // Secrets "show" route - GET request - display details about one secret
 // http://localhost:4000/secrets/0
 
-router.get('/secrets/:id/', async (req, res, next) => {
+router.get('/:id/', async (req, res, next) => {
     try {
         const foundSecret = await db.Secret.findById(req.params.id)
-        const allComments = await db.Comment.find({secret: req.params.id})
-        console.log(allComments.length, 'Comments Found');
+        // const allComments = await db.Comment.find({secret: req.params.id})
+        // console.log(allComments.length, 'Comments Found');
         const context = { 
             oneSecret: foundSecret,
-            comments: allComments,
-            message: "Hello there"
+            // comments: allComments,
+            message: "Join the Discourse- Add a Comment!"
         }
         return res.render('show.ejs', context)
     } catch (error) {
@@ -72,6 +87,21 @@ router.get('/secrets/:id/', async (req, res, next) => {
     }
 })
 
+//Get Route for Edit Path in Index.ejs
+router.get('/:id/', async (req, res, next) => {
+    try {
+        const foundSecret = await db.Secret.findById(req.params.id)
+        const context = { 
+            oneSecret: foundSecret,
+            message: "Edit Your Secret"
+        }
+        return res.render('index.ejs', context)
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
 
 
 // Secrets "edit" route - GET request - display an edit form for one secret
@@ -110,7 +140,13 @@ router.get('/:id/edit', async (req,res, next)=>{
 router.post('/', async (req, res, next) => {
     try {
         // console.log(req.body)
-        const createdSecret = await db.Secret.create(req.body);
+        const userSecret = await db.User.find({username: req.body.username})
+        const newSecret = {
+            confessor: userSecret._id, 
+            content: req.body.content,
+            category: req.body.category
+        }
+        const createdSecret = await db.Secret.create(newSecret);
         console.log(`The created product is ${createdSecret}`)
         res.redirect('/secrets');
     } catch (error) {
@@ -160,10 +196,11 @@ router.put('/:id', async (req, res, next)=>{
         return next();
     }
 })
-router.post('/comment', async (req, res, next)=>{
+router.post('/comments', async (req, res, next)=>{
     try {
         const newCreatedComment = req.body
         const createdComment = await db.Comment.create(newCreatedComment)
+        // const user = await db.Secret.findOneAndUpdate({secrets})
         console.log(createdComment)
         res.redirect('/secrets')
 
