@@ -63,6 +63,7 @@ router.get('/:id/', async (req, res, next) => {
             comments: allComments,
             message: "Join the Discourse- Add a Comment!"
         }
+        console.log(context)
         return res.render('show.ejs', context)
     } catch (error) {
         console.log(error);
