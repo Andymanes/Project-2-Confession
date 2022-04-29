@@ -51,6 +51,7 @@ router.get('/', async (req, res, next) => {
 router.get('/new', (req, res) => {
     res.render('new.ejs')
 })
+
 // Secrets "show" route - GET request - display details about one secret
 // http://localhost:4000/secrets/0
 router.get('/:id/', async (req, res, next) => {
@@ -58,6 +59,7 @@ router.get('/:id/', async (req, res, next) => {
         const foundSecret = await db.Secret.findById(req.params.id)
         const allComments = await db.Comment.find({secret: req.params.id})
         console.log(allComments.length, 'Comments Found');
+        console.log('content from first comment:', allComments[0].content)
         const context = { 
             oneSecret: foundSecret,
             // comments: allComments,
@@ -70,23 +72,25 @@ router.get('/:id/', async (req, res, next) => {
         return next();
     }
 })
+
+
 //Get Route for Edit Path in Index.ejs
-router.get('/:id/', async (req, res, next) => {
-    try {
-        const comments = await db.Comment.find({secret: req.params.id})
-        console.log(comments)
-        const foundSecret = await db.Secret.findById(req.params.id)
-        const context = { 
-            oneSecret: foundSecret,
-            message: "Edit Your Secret"
-        }
-        return res.render('index.ejs', context)
-    } catch (error) {
-        console.log(error);
-        req.error = error;
-        return next();
-    }
-})
+// router.get('/:id/', async (req, res, next) => {
+//     try {
+//         const comments = await db.Comment.find({secret: req.params.id})
+//         console.log(comments)
+//         const foundSecret = await db.Secret.findById(req.params.id)
+//         const context = { 
+//             oneSecret: foundSecret,
+//             message: "Edit Your Secret"
+//         }
+//         return res.render('index.ejs', context)
+//     } catch (error) {
+//         console.log(error);
+//         req.error = error;
+//         return next();
+//     }
+// })
 
 
 // Secrets "edit" route - GET request - display an edit form for one secret
@@ -129,7 +133,7 @@ router.post('/', async (req, res, next) => {
 })
 
 
-router.post('/comments', async (req, res, next)=>{
+router.post('/:id', async (req, res, next)=>{
     try {
         const newCreatedComment = req.body
         const createdComment = await db.Comment.create(newCreatedComment)
