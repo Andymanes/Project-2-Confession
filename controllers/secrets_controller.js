@@ -161,19 +161,19 @@ router.delete('/:id', async (req,res, next)=>{
 })
 
 
-router.delete('/:id', async (req,res, next)=>{
-    try {
-        const deletedSecret = await db.Secret.findByIdAndDelete(req.params.id);
-        // delete one secret (req.params.id)
-        // find all comments where secret == req.params.id | delete those as well
-        // const deletedComments = await db.Comment.deleteMany({secret: req.params.id})
-        return res.redirect('/secrets')
-    } catch (error) {
-        console.log(error);
-        req.error = error;
-        return next();
-    }
-})
+// router.delete('/:id', async (req,res, next)=>{
+//     try {
+//         const deletedSecret = await db.Secret.findByIdAndDelete(req.params.id);
+//         // delete one secret (req.params.id)
+//         // find all comments where secret == req.params.id | delete those as well
+//         // const deletedComments = await db.Comment.deleteMany({secret: req.params.id})
+//         return res.redirect('/secrets')
+//     } catch (error) {
+//         console.log(error);
+//         req.error = error;
+//         return next();
+//     }
+// })
 
 // Secrets "update" route - PUT request - update the Secrets array and redirects to show route
 // http://localhost:4000/secrets/0/
