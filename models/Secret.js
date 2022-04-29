@@ -8,16 +8,17 @@ const secretSchema = new mongoose.Schema({
     },
     category: {
         type: String,
-        required: [true, 'price cannot be empty!']
+        required: [true, 'category cannot be empty!']
     },
-    username:{
+    username: {
         type: mongoose.Types.ObjectId,
-        ref: 'User'
+        ref: 'User',
+        required: true
     },
     comments: {
-        type: mongoose.Types.ObjectId,
+        type: [mongoose.Types.ObjectId],
         ref: 'Comments'
-}
+    }
 },
     {
         timestamps: true
