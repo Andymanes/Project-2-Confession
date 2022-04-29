@@ -180,7 +180,7 @@ router.delete('/:id', async (req,res, next)=>{
 router.put('/:id', async (req, res, next)=>{
     try {
         const updatedSecret = await db.Secret.findByIdAndUpdate(req.params.id, req.body);
-        console.log(updatedSecret);
+        // console.log(updatedSecret);
         return res.redirect(`/secrets`)
     } catch (error) {
         console.log(error);
