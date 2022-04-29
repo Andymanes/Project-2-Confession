@@ -10,14 +10,15 @@ const secretSchema = new mongoose.Schema({
         type: String,
         required: [true, 'category cannot be empty!']
     },
-    confessor: {
-        type: String,
-        // ref: 'User'
+    username: {
+        type: mongoose.Types.ObjectId,
+        ref: 'User',
+        required: true
     },
-    // username: {
-    //     type: mongoose.Types.ObjectId,
-    //     ref: 'User'
-    // }
+    comments: {
+        type: [mongoose.Types.ObjectId],
+        ref: 'Comments'
+    }
 },
     {
         timestamps: true
