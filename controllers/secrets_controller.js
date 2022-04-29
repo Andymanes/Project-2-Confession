@@ -32,7 +32,7 @@ router.get('/', async (req, res, next) => {
         const secrets = await db.Secret.find({}).populate('username');
         const context =  {secrets}
         console.log(secrets.length)
-        console.log(context.secrets[secrets.length - 1]);
+        
         res.render('index.ejs', context);
 } catch (error) {
         console.log(error);
@@ -148,6 +148,19 @@ router.post('/', async (req, res, next) => {
 })
 
 
+router.post('/comments', async (req, res, next)=>{
+    try {
+        const newCreatedComment = req.body
+        const createdComment = await db.Comment.create(newCreatedComment)
+        // const user = await db.Secret.findOneAndUpdate({secrets})
+        console.log(createdComment)
+        res.redirect('/secrets')
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
 
 // Secrets "destroy" route - DELETE request - removes data from secrets database and redirects to index route
 
