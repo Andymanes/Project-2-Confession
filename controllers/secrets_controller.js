@@ -56,8 +56,8 @@ router.get('/new', (req, res) => {
 router.get('/:id/', async (req, res, next) => {
     try {
         const foundSecret = await db.Secret.findById(req.params.id)
-        // const allComments = await db.Comment.find({secret: req.params.id})
-        // console.log(allComments.length, 'Comments Found');
+        const allComments = await db.Comment.find({secret: req.params.id})
+        console.log(allComments.length, 'Comments Found');
         const context = { 
             oneSecret: foundSecret,
             // comments: allComments,
@@ -73,6 +73,8 @@ router.get('/:id/', async (req, res, next) => {
 //Get Route for Edit Path in Index.ejs
 router.get('/:id/', async (req, res, next) => {
     try {
+        const comments = await db.Comment.find({secret: req.params.id})
+        console.log(comments)
         const foundSecret = await db.Secret.findById(req.params.id)
         const context = { 
             oneSecret: foundSecret,
