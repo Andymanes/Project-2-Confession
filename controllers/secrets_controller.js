@@ -20,9 +20,10 @@ const db = require('../models')
 // get all secrets route
 router.get('/', async (req, res, next) => {
     try {
-        const secrets = await db.Secret.find({});
-        const context = { secrets }
-        console.log(secrets);
+        const secrets = await db.Secret.find({}).populate('username');
+        const context =  {secrets}
+        console.log(secrets.length)
+        console.log(context.secrets[secrets.length - 1]);
         res.render('index.ejs', context);
 } catch (error) {
         console.log(error);
@@ -115,12 +116,9 @@ router.post('/', async (req, res, next) => {
     try {
         // console.log(req.body)
         const userSecret = await db.User.find({username: req.body.username})
-        const newSecret = {
-            confessor: req.body.confessor, 
-            content: req.body.content,
-            category: req.body.category
-        }
-        const createdSecret = await db.Secret.create(newSecret);
+        req.body.username = userSecret[0]._id
+        console.log(req.body)
+        const createdSecret = await db.Secret.create(req.body);
         // console.log(`The created product is ${createdSecret}`)
         res.redirect('/secrets');
     } catch (error) {
