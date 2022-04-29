@@ -60,9 +60,10 @@ router.get('/:id/', async (req, res, next) => {
         console.log(allComments.length, 'Comments Found');
         const context = { 
             oneSecret: foundSecret,
-            // comments: allComments,
+            comments: allComments,
             message: "Join the Discourse- Add a Comment!"
         }
+        console.log(context)
         return res.render('show.ejs', context)
     } catch (error) {
         console.log(error);
@@ -70,23 +71,23 @@ router.get('/:id/', async (req, res, next) => {
         return next();
     }
 })
-//Get Route for Edit Path in Index.ejs
-router.get('/:id/', async (req, res, next) => {
-    try {
-        const comments = await db.Comment.find({secret: req.params.id})
-        console.log(comments)
-        const foundSecret = await db.Secret.findById(req.params.id)
-        const context = { 
-            oneSecret: foundSecret,
-            message: "Edit Your Secret"
-        }
-        return res.render('index.ejs', context)
-    } catch (error) {
-        console.log(error);
-        req.error = error;
-        return next();
-    }
-})
+// //Get Route for Edit Path in Index.ejs
+// router.get('/:id/', async (req, res, next) => {
+//     try {
+//         const comments = await db.Comment.find({secret: req.params.id})
+//         console.log(comments)
+//         const foundSecret = await db.Secret.findById(req.params.id)
+//         const context = { 
+//             oneSecret: foundSecret,
+//             message: "Edit Your Secret"
+//         }
+//         return res.render('index.ejs', context)
+//     } catch (error) {
+//         console.log(error);
+//         req.error = error;
+//         return next();
+//     }
+// })
 
 
 // Secrets "edit" route - GET request - display an edit form for one secret
@@ -129,7 +130,7 @@ router.post('/', async (req, res, next) => {
 })
 
 
-router.post('/comments', async (req, res, next)=>{
+router.post('/:id', async (req, res, next)=>{
     try {
         const newCreatedComment = req.body
         const createdComment = await db.Comment.create(newCreatedComment)

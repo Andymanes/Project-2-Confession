@@ -21,7 +21,7 @@
       <div>
           <h3>Add a Comment:</h3>
       </div>
-      <h2></h2>
+     
       <form action="/secrets/comments" method="POST">
   
         <select name="rating" id="rating">
@@ -32,6 +32,15 @@
         <input type="submit" value="Comment" name="Comments.content">
       </form> 
 
+      <div>
+            <% for(let i=0; i < comments.length; i++){ %>
+            <% const oneComment = comments[i]  %>
+            <p><%= oneComment.content %></p>
+              <form action="/:id/ <%=oneComment[i]%>?_method=DELETE" method="POST">
+              <input type="submit" value="delete comment" />
+              </form>
+          </div>
+      <%}%>
 
       
       </html>    
