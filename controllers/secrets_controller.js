@@ -62,9 +62,10 @@ router.get('/:id/', async (req, res, next) => {
         console.log('content from first comment:', allComments[0].content)
         const context = { 
             oneSecret: foundSecret,
-            // comments: allComments,
+            comments: allComments,
             message: "Join the Discourse- Add a Comment!"
         }
+        console.log(context)
         return res.render('show.ejs', context)
     } catch (error) {
         console.log(error);
@@ -72,9 +73,7 @@ router.get('/:id/', async (req, res, next) => {
         return next();
     }
 })
-
-
-//Get Route for Edit Path in Index.ejs
+// //Get Route for Edit Path in Index.ejs
 // router.get('/:id/', async (req, res, next) => {
 //     try {
 //         const comments = await db.Comment.find({secret: req.params.id})

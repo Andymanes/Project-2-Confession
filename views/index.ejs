@@ -21,12 +21,16 @@
                <a href="/secrets/new/<%=secrets._id%>"> Add Your Secret</a>
                <% for(let idx=0; idx < secrets.length; idx++){ %>
                 <% const secret = secrets[idx]  %>
+                <div class="secret">
                 <h1>category: <%=secrets[idx].category%></h1>
                 <h1>secret: <%=secrets[idx].content%> </h1>
                 <h1><%=secret.username.username%></h1>
+                </div>
+                <div class = "edit">
                 <a href="/secrets/<%= secrets[idx]._id %>/edit">Edit</a>
                 <a href="/secrets/<%=secrets[idx]._id%>">Comment</a>
-                <div>
+                </div>
+                <div class="delete">
                     <form method="POST" action="/secrets/<%= secret._id%>?_method=DELETE">  
                         <input type="submit" value="Delete Secret"/>
                     </form>
