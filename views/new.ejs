@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"/> -->
     <title>Document</title>
 </head>
 <body>
-
     <h1>Post a Secret</h1>
 <form action="/secrets/"    method="POST">
-    <input type="text" name="category"/>
-    <input type="text" name="content"/>
-    <input type="text" name="username" value="username"/>
+    Category:<br>
+    <input type="text" name="category"/><br>
+    Content:<br>
+    <input type="text" name="content"/><br>
+    username:<br>
+    <input type="text" name="username"/><br>
     <input type='submit' value="create confession"/>
-
 </form>
 
 
