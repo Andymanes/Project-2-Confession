@@ -44,9 +44,6 @@ app.get('/', (req, res) => res.send('Welcome to Confessions!'))
 
 
 
-
-
-
 app.listen(PORT, ()=>{
     console.log(`Listening at port ${PORT}`)
 })

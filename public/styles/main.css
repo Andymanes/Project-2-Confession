@@ -1,0 +1,19 @@
+/* @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"; */
+
+
+h1 {
+  font-size: 32;
+  font: white;
+}
+
+  body {
+  	background-color: #6A5ACD;
+    font: white;
+    font-size: 25 px;
+    text-align: center;
+    height: 500px; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    padding: 0px 40px 20px 40px;
+}
