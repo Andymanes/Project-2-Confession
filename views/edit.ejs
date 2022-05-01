@@ -6,26 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/main.css" />
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"/> -->
-    <title> Edit Comment</title>
+    <title style='color:white'> Edit Comment</title>
 </head>
 <body>
   
        
     </div>
-    <h1>Edit Page | <%= secret.content%></h1>
+    <h1 style='color:white'>Edit Page | <%= secret.content%></h1>
     <div>
         <form method="POST" action="/secrets/<%= secret._id %>?_method=PUT">
             <div>
-                <label>Secret Content</label>
+                <label style='color:white'>Secret Content</label>
                 <input type="text" name="content" value="<%= secret.content%>"/>
             </div>
             <div>
-                <label>Secret Category</label>
+                <label style='color:white' >Secret Category</label>
                 <input type="text" name="category" value="<%= secret.category%>"/>
             </div>
             
             <div>
-                <input type="submit" value="Edit Secret: <%= secret.content%>"/>
+                <input  type="submit" value="Edit Secret: <%= secret.content%>"/>
             </div>
             </form>
             <div>
