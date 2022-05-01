@@ -14,7 +14,7 @@
 //     "Portal7.JPG",
 //     "Portal8.JPG",
 //     "Portal9.JPG"
-//   ];
+//   ]
 
 //   app.get('/secrets', (req, res) => {
 //     const context = { 
