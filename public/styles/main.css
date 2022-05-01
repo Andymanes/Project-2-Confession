@@ -2,12 +2,17 @@
 
 
 h1 {
-  font-size: 32;
+  font-size: 60px ;
+  font: white;
+}
+
+h2 {
+  font-size: 30px ;
   font: white;
 }
 
   body {
-  	background-color: #6A5ACD;
+  	background-color: black;
     font: white;
     font-size: 25 px;
     text-align: center;
@@ -20,20 +25,38 @@ h1 {
 
 
 .secret {
-  width: 300px;
-  border: 15px solid white;
-  padding: 50px;
+  
+  border: 15px solid hotpink;
+  padding: 5px;
   margin: 20px;
+  height: 400px;
+  width: 400px;
+  top: -200px;
+  border-radius: 15px;
 }
+
 .edit {
-  width: 20px;
+  width: 60px;
   border: 5px solid white;
   padding: 10px;
   margin: 10px;
 }
 
 .delete {
-  width: 50px;
+  width: 100px;
   padding: 10px;
   margin: 10px;
+  border: 5px solid white;
 }
+
+
+
+.image_container {
+height: 400px;
+width: 400px;
+position: relative;
+    top: -200px;
+    border-radius: 15px;
+    opacity: 0.7;
+}
+
