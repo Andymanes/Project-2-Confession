@@ -5,30 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/main.css" />
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"/> -->
     <title>Document</title>
 </head>
 <body>
     <section>
         <div>
-            <h2 class="title">Confessions</h2>
+            <h1 style='color:white' class="title">Confessions</h1>
         </div>
     </section>
     <main class="container">
         <div>
             <div>
-               <h1>This is our secret index</h1>
-               <a href="/secrets/new/<%=secrets._id%>"> Add Your Secret</a>
+               <a style='color:white' href="/secrets/new/<%=secrets._id%>"> Add Your Secret</a>
                <% for(let idx=0; idx < secrets.length; idx++){ %>
                 <% const secret = secrets[idx]  %>
                 <div class="secret">
-                <h1>category: <%=secrets[idx].category%></h1>
-                <h1>secret: <%=secrets[idx].content%> </h1>
-                <h1><%=secret.username.username%></h1>
+                <h2 style='color:white'>category: <%=secrets[idx].category%></h1style=>
+                <h2 style='color:white'>secret: <%=secrets[idx].content%> </h2>
+                <h2 style='color:white'><%=secret.username.username%></h2>
+               
+                <img class= "image_container" src="./portalimg/Portal1.JPG" >  
+    
                 </div>
                 <div class = "edit">
-                <a href="/secrets/<%= secrets[idx]._id %>/edit">Edit</a>
-                <a href="/secrets/<%=secrets[idx]._id%>">Comment</a>
+                <a style='color:white' href="/secrets/<%= secrets[idx]._id %>/edit">Edit</a>
+                <a style='color:white' href="/secrets/<%=secrets[idx]._id%>">Comment</a>
                 </div>
                 <div class="delete">
                     <form method="POST" action="/secrets/<%= secret._id%>?_method=DELETE">  
