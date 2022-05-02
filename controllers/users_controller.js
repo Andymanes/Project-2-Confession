@@ -14,7 +14,7 @@ router.post('/register', async (req, res, next) => {
         const newUser = await db.User.create(req.body);
         // console.log(req.body)
         console.log(newUser)
-        res.redirect('/users/register');
+        res.redirect('/secrets');
     } catch (error) {
         console.log(error);
         req.error = error;

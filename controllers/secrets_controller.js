@@ -51,6 +51,7 @@ router.get('/', async (req, res, next) => {
 router.get('/new', (req, res) => {
     res.render('new.ejs')
 })
+
 // Secrets "show" route - GET request - display details about one secret
 // http://localhost:4000/secrets/0
 router.get('/:id/', async (req, res, next) => {
@@ -58,6 +59,7 @@ router.get('/:id/', async (req, res, next) => {
         const foundSecret = await db.Secret.findById(req.params.id)
         const allComments = await db.Comment.find({secret: req.params.id})
         console.log(allComments.length, 'Comments Found');
+        console.log('content from first comment:', allComments[0].content)
         const context = { 
             oneSecret: foundSecret,
             comments: allComments,
