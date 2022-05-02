@@ -7,15 +7,17 @@ background-position: center;">
 
     <%- include('partials/nav.ejs')%>
 
-    <h1 style='color:white' >Post a Secret</h1>
+    <h1 style='color:white; text-align: center' >Post a Secret</h1>
+    <h2 style='color:white; text-align: center' >Before you post, create an account. Link is above.</h2>
     <form style='color:white' action="/secrets/"    method="POST">
-    Category:<br>
-    <input type="text" name="category"/><br>
-    Content:<br>
-    <input  type="text" name="content"/><br>
-    username:<br>
-    <input type="text" name="username"/><br>
-    <input type='submit' value="create confession"/>
+    <p style= 'font-size: 40px;'>Tell Us Your Secret:<br></p>
+    <input style= 'font-size: 40px; ' type="text" name="content"/>
+    <p style= 'font-size: 40px;'>Category:<br></p>
+    <input style= 'font-size: 40px;' type="text" name="category"/>
+    <p style= 'font-size: 40px; '>Username:<br></p>
+    <input style= 'font-size: 40px;' type="text" name="username"/>
+    <br>
+    <input style= 'font-size: 20px; margin: 60px' type='submit' value="create confession"/>
 </form>
 
 

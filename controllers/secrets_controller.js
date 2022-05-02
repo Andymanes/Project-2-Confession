@@ -59,7 +59,7 @@ router.get('/:id/', async (req, res, next) => {
         const foundSecret = await db.Secret.findById(req.params.id)
         const allComments = await db.Comment.find({secret: req.params.id})
         console.log(allComments.length, 'Comments Found');
-       
+    
         const context = { 
             oneSecret: foundSecret,
             comments: allComments,
