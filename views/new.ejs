@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('partials/head.ejs')  %> >
-<body style="background-image: url(https://w0.peakpx.com/wallpaper/782/396/HD-wallpaper-the-secret-movie-acceptance-gratitude-law-of-attraction-prosperity-rhonda-byrne-the-secret-wealth-wish-wish-fulfillment.jpg); background-size: 100vw;  background-repeat: no-repeat;
+    <%- include('partials/head.ejs')  %> 
+<body style="background-image: url(https://media.istockphoto.com/vectors/seamless-pattern-with-hand-drawn-doodle-questions-marks-vector-vector-id1177323484?k=20&m=1177323484&s=612x612&w=0&h=BoPsIQPMemLJaAe4ZNWN8AWYdSWfZZgcDSbFf3joIZQ=); background-size: 100vw; background-repeat: repeat-y; background-size: 100vw;  background-repeat: no-repeat;
 background-attachment: fixed;
 background-position: center;">
 
     <%- include('partials/nav.ejs')%>
 
-    <h1 style='color:white; text-align: center' >Post a Secret</h1>
-    <h2 style='color:white; text-align: center' >Before you post, create an account. Link is above.</h2>
-    <form style='color:white' action="/secrets/"    method="POST">
-    <p style= 'font-size: 40px;'>Tell Us Your Secret:<br></p>
-    <input style= 'font-size: 40px; ' type="text" name="content"/>
-    <p style= 'font-size: 40px;'>Category:<br></p>
-    <input style= 'font-size: 40px;' type="text" name="category"/>
-    <p style= 'font-size: 40px; '>Username:<br></p>
-    <input style= 'font-size: 40px;' type="text" name="username"/>
-    <br>
-    <input style= 'font-size: 20px; margin: 60px' type='submit' value="create confession"/>
+    <h1 style='color: lightgreen; font-size: 80px; text-align: center; background-color: white; border-radius: 25px;' >Post a Secret</h1>
+    <h2 style='color: lightgreen; font-size: 40px; text-align: center; background-color: white; border-radius: 25px;' >Before you post, create an account. Link is above.</h2>
+
+
+
+    <form action="/secrets/"    method="POST">
+   
+    <input style= 'color: black; font-size: 30px; background-color: white; border-radius: 25px;' type="text" name="content" placeholder="tell us your secret here"/>
+    <p><br></p>
+    <input style= 'color: black; font-size: 30px; background-color: white; border-radius: 25px;' type="text" name="category" placeholder="secret category"/>
+    <p><br></p>
+    <input style= 'color: black; font-size: 30px; background-color: white; border-radius: 25px;' type="text" name="username" placeholder="username here"/>
+    <p><br></p>
+    <input style= 'color: lightgreen; font-size: 30px; background-color: white; border-radius: 25px;' type='submit' value="create confession"/>
 </form>
 
 
