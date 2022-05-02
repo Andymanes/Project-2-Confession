@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('partials/head.ejs')  %> >
-<body style="background-image: url(https://external-preview.redd.it/JQg4KWsdRwwMAJPxsYYdyYISlcPOFP3EP4eX15SwcHg.jpg?auto=webp&s=531713cf30ec7e814d051a8b7a54a70ad34824e0); background-size: 100vw;   background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;">
+<body >>
 
   <%- include('partials/nav.ejs')%>
 
@@ -22,12 +20,11 @@ background-position: center;">
      
       <form action="/secrets/comments" method="POST">
   
-        <select name="rating" id="rating">
-        <option value="0">rate</option></select>
-        <input style='color:white' type="hidden" value="<%= oneSecret._id%>" name="secret">
+      
+        <input style='color: white' type="hidden" value="<%= oneSecret._id%>" name="secret">
     
-        <input  style='color:white' type="text" name="content"/>
-        <input style='color:white' type="submit" value="Comment" name="Comments.content">
+        <input  type="text" name="content"/>
+        <input style='color: green' type="submit" value="Comment" name="Comments.content">
       </form> 
 
       <div>
