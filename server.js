@@ -2,10 +2,7 @@ const express = require('express')
 const methodOverride = require('method-override')
 const controllers = require('./controllers')
 const app = express()
-// const router = require('./controllers')
-// const commentsRoute = require('./controllers/comments_controller')
-// const secretRoute = require('./controllers/secrets_controller')
-// db connection
+
 require('./config/db.connection')
 
 const PORT = process.env.PORT || 3000
@@ -36,7 +33,7 @@ app.use('/users', controllers.users)
 // app.use('/comments', controllers.comments)
 app.use('/secrets', controllers.secrets)
 
-app.get('/', (req, res) => res.send('Welcome to Confessions!'))
+app.get('/', (req, res) => res.redirect('/secrets'))
 // app.get('/comment', commentsRoute)
 
 
