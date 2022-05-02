@@ -8,7 +8,7 @@ const app = express()
 // db connection
 require('./config/db.connection')
 
-const PORT = 4000
+const PORT = process.env.PORT || 4000
 
 
 // app configs - app.set()
@@ -43,6 +43,6 @@ app.get('/', (req, res) => res.send('Welcome to Confessions!'))
 
 
 
-app.listen(PORT, ()=>{
+app.listen( PORT, ()=>{
     console.log(`Listening at port ${PORT}`)
 })
