@@ -117,14 +117,12 @@ router.get('/:id/edit', async (req,res, next)=>{
 // http://localhost:4000/secrets/
 router.post('/', async (req, res, next) => {
     try {
-        const foundSecret = await db.Secret.findById(req.params.id)
-        const id = foundSecret._id
         const userSecret = await db.User.find({username: req.body.username})
         req.body.username = userSecret[0]._id
         console.log(req.body)
         const createdSecret = await db.Secret.create(req.body);
         // console.log(`The created product is ${createdSecret}`)
-        res.redirect('/secrets/id');
+        res.redirect('/secrets');
     } catch (error) {
         console.log(error);
         req.error = error;

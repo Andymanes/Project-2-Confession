@@ -2,21 +2,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('partials/head.ejs')  %>
-<body>
+<body style="background-image: url(https://media.istockphoto.com/vectors/seamless-pattern-with-hand-drawn-doodle-questions-marks-vector-vector-id1177323484?k=20&m=1177323484&s=612x612&w=0&h=BoPsIQPMemLJaAe4ZNWN8AWYdSWfZZgcDSbFf3joIZQ=); background-size: 100vw; background-repeat: repeat-y; ">
 
   <%- include('partials/nav.ejs')%>
 
-  <h1>Register Here!</h1>
+  <h1 style="color: lightgreen; background-color: white; background-size: 50% auto; border-radius: 25px">Register Here!</h1>
   <form action="/users/register" method="POST">
       <!-- user input-->
-      <p style='color:white; font-size: 30px;'>Username:<br></p>
-      <input type="text" name="username" placeholder="username" required><br><br>
-      <Password: style='color:white; font-size: 30px;'> Password:<br></p>
-      <input type="password" name="password" placeholder="password" required><br><br>
-      <email: style='color:white; font-size: 30px;'> email:<br></p>
-      <input type="text" name="email" placeholder="email" required><br><br>
+      
+      <input  style='color: lightgreen; font-size: 30px; background-color: white; border-radius: 25px;' type="text" name="username" placeholder="username" required><br><br>
+     
+      <input style='color: lightgreen; font-size: 30px; background-color: white; border-radius: 25px;' type="password" name="password" placeholder="password" required><br><br>
+     
+      <input style='color: lightgreen; font-size: 30px; background-color: white; border-radius: 25px;' type="text" name="email" placeholder="email" required><br><br>
       <!-- submit button -->
-      <input type="submit" value="Create Account">
+      <input style='color: lightgreen; font-size: 30px; background-color: white; border-radius: 25px;' type="submit" value="Create Account">
   </form>
   <style>
     body {
