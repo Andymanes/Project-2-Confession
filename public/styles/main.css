@@ -1,4 +1,3 @@
-/* @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"; */
 
 .navbar {
   font-size: 24px;
@@ -9,59 +8,84 @@
 h1 {
   font-size: 60px ;
   font: white;
+
 }
 
-h2 {
-  font-size: 30px ;
+.subheading {
+  text-align: center;
+  font-size: 20px ;
   font: white;
+
 }
+
+
+  .text-block {
+    bottom: 20px;
+    right: 20px;
+    background-color: black;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+
 
   body {
   	background-color: black;
     font: white;
     font-size: 25 px;
-    text-align: center;
-    height: 500px; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-size: cover;
-    padding: 0px 40px 20px 40px;
+    padding: 80px 20px 40px 20px;
+    margin: 0 auto;
+    max-width: 56em;
+    padding: 1em 0;
 }
 
 
-.secret {
-  
-  border: 15px solid hotpink;
-  padding: 5px;
-  margin: 20px;
-  height: 400px;
-  width: 400px;
-  top: -200px;
-  border-radius: 15px;
-}
 
-.edit {
+#edit {
   width: 60px;
-  border: 5px solid white;
   padding: 10px;
   margin: 10px;
+  
 }
 
-.delete {
-  width: 100px;
+#delete {
+  width: 60px;
   padding: 10px;
   margin: 10px;
-  border: 5px solid white;
 }
 
 
 
 .image_container {
-height: 400px;
-width: 400px;
-position: relative;
-    top: -200px;
-    border-radius: 15px;
-    opacity: 0.7;
+height: 300px;
+width: 300px;
+top: -200px;
+border-radius: 15px;
+opacity: 0.7;
+display: grid;
+  position: relative;
 }
+
+  
+ 
+  .container {
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+  }
+
+.secret_container {
+  height: 300px;
+  width: 300px;
+  border-radius: 15px;
+  border: 15px solid hotpink;
+  padding: 5px;
+  margin: 20px;
+  top: -20%;
+
+  text-align: center;
+  
+}
+
+
 
