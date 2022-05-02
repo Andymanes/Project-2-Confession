@@ -6,11 +6,11 @@
   <%- include('partials/nav.ejs')%>
 
   <h1 style='color:white'>Comments Page</h1>
-  <p style='color:white; font-size: 30px;' >Join the Discourse!</p>
+  <p style='color:white; font-size: 30px;'> Join the Discourse!</p>
   <div style= "background-image: url(../portalimg/Portal10.JPG)" class="secret_container">
   <small style='color:white' ><%= oneSecret.category %></small>
   <h2 style='color:white' ><%= oneSecret.content %></h2>
-  <
+  
 
   </div>
 
@@ -29,7 +29,7 @@
       <div>
             <% for(let i=0; i < comments.length; i++){ %>
             <% const oneComment = comments[i]  %>
-            <p style='color:white; font-size: 40px;' ><%= oneComment.content %></p>
+            <p style='color:white; font-size: 40px;'><%= oneComment.content %></p>
             
           </div>
       <%}%>
