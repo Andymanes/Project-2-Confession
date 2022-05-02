@@ -36,7 +36,7 @@ app.use('/users', controllers.users)
 // app.use('/comments', controllers.comments)
 app.use('/secrets', controllers.secrets)
 
-app.get('/', (req, res) => res.send('Welcome to Confessions!'))
+app.get('/', (req, res) => res.redirect('/secrets'))
 // app.get('/comment', commentsRoute)
 
 
