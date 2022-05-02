@@ -3,7 +3,7 @@
 
 <%- include('partials/head.ejs')  %> >
 
-<body>
+<body style="background-image: url(https://images.pexels.com/photos/3683107/pexels-photo-3683107.jpeg);">
     <%- include('partials/nav.ejs')%>
 
        
@@ -12,16 +12,13 @@
     <div>
         <form method="POST" action="/secrets/<%= secret._id %>?_method=PUT">
             <div>
-                <label style='color:white'>Secret Content</label>
-                <input type="text" name="content" value="<%= secret.content%>"/>
-            </div>
-            <div>
-                <label style='color:white'>Secret Category</label>
-                <input type="text" name="category" value="<%= secret.category%>"/>
+                <label style='color:white; font-size: 40px;'>Edit Your Secret</label>
+                <input style= 'font-size: 40px' type="text" name="content" value="<%= secret.content%>"/>
             </div>
             
+            
             <div>
-                <input  type="submit" value="Edit Secret: <%= secret.content%>"/>
+                <input  type="submit" value="Edit Secret"/>
             </div>
             </form>
             <div>

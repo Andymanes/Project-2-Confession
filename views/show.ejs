@@ -1,44 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('partials/head.ejs')  %> >
-<body>
+<body >>
 
   <%- include('partials/nav.ejs')%>
 
-  <h1 style='color:white'>Show Page</h1>
-  <p style='color:white' ><%= message %></p>
-  <!-- secret object referenced by oneSecret -->
+  <h1 style='color:white'>Comments Page</h1>
+  <p style='color:white; font-size: 30px;'> Join the Discourse!</p>
+  <div style= "background-image: url(../portalimg/Portal10.JPG)" class="secret_container">
   <small style='color:white' ><%= oneSecret.category %></small>
   <h2 style='color:white' ><%= oneSecret.content %></h2>
   
 
+  </div>
+
   <section>
-      <h2 style='color:white'>Comments</h2>
+
       <div>
-          <h3 style='color:white'>Add a Comment:</h3>
+          <h3 style='color:white;font-size: 30px;'>Add a Comment:</h3>
       </div>
      
       <form action="/secrets/comments" method="POST">
-  
-        <select name="rating" id="rating">
-        <option value="0">rate</option></select>
-        <input style='color:white' type="hidden" value="<%= oneSecret._id%>" name="secret">
-    
-        <input  style='color:white' type="text" name="content"/>
-        <input style='color:white' type="submit" value="Comment" name="Comments.content">
+        <input style='color:black' type="hidden" value="<%= oneSecret._id%>" name="secret">
+        <input  style='color: black; font-size: 30px;' type="text" name="content"/>
+        <input style='color: black; font-size: 30px;' type="submit" value="Comment" name="Comments.content">
       </form> 
 
       <div>
             <% for(let i=0; i < comments.length; i++){ %>
             <% const oneComment = comments[i]  %>
-            <p style='color:white' ><%= oneComment.content %></p>
-              <form action="/:id/ <%=oneComment[i]%>?_method=DELETE" method="POST">
-              <input type="submit" value="delete comment" />
-              </form>
+            <p style='color:white; font-size: 40px;'><%= oneComment.content %></p>
+            
           </div>
       <%}%>
 
-      
-      </html>    
+        </section>
+
+
+        <style>
+          body{
+            text-align: center;
+          }
+        </style>
+         
       </body>
-      
+      </html> 
