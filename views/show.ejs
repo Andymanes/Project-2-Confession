@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('partials/head.ejs')  %> >
-<body >>
+<body style="background-image: url(https://media.istockphoto.com/vectors/seamless-pattern-with-hand-drawn-doodle-questions-marks-vector-vector-id1177323484?k=20&m=1177323484&s=612x612&w=0&h=BoPsIQPMemLJaAe4ZNWN8AWYdSWfZZgcDSbFf3joIZQ=); background-size: 100vw; background-repeat: repeat-y; ">
+
 
   <%- include('partials/nav.ejs')%>
 
-  <h1 style='color:white'>Comments Page</h1>
-  <p style='color:white; font-size: 30px;'> Join the Discourse!</p>
+  <h1 style='color:royalblue'>Comments Page</h1>
+  <p style='color:royalblue; font-size: 30px;'> Join the Discourse!</p>
   <div style= "background-image: url(../portalimg/Portal10.JPG)" class="secret_container">
   <small style='color:white' ><%= oneSecret.category %></small>
-  <h2 style='color:white' ><%= oneSecret.content %></h2>
+  <h2 style='color:white'> <%= oneSecret.content %></h2>
   
 
   </div>
@@ -17,7 +18,7 @@
   <section>
 
       <div>
-          <h3 style='color:white;font-size: 30px;'>Add a Comment:</h3>
+          <h3 style= 'color:royalblue; font-size: 30px;''>Add a Comment:</h3>
       </div>
      
       <form action="/secrets/comments" method="POST">
@@ -29,7 +30,7 @@
       <div>
             <% for(let i=0; i < comments.length; i++){ %>
             <% const oneComment = comments[i]  %>
-            <p style='color:white; font-size: 40px;'><%= oneComment.content %></p>
+            <p style='color:royalblue; font-size: 40px;'><%= oneComment.content %></p>
             
           </div>
       <%}%>
