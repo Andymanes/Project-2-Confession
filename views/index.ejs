@@ -9,11 +9,8 @@
 
     <section>
         <div>
-            <h1 style='color:white' class="title">Confessions</h1>
+            <h1 style='color:white; text-align: center;' class="title">Confessions</h1>
         </div>
-        </div class="subheading">\
-               <a style='color:white' href="/secrets/new/<%=secrets._id%>"> Add Your Secret</a>
-            </div>
     </section>
     <main class="container">
     
@@ -21,24 +18,22 @@
                 
                <% for(let idx=0; idx < secrets.length; idx++){ %>
                 <% const secret = secrets[idx]  %>
-                <div style= "background-image: url(./portalimg/Portal1.JPG)" class="secret_container">
-                <h3 class="text-block" style= 'color: white' >category: <%=secrets[idx].category%></h3>
-                <h3 class="text-block" style='color:white' >secret: <%=secrets[idx].content%> </h3>
-                <h3 class="text-block" style='color:white' ><%=secret.username.username%></h3>
-                <!-- <img class= "image_container" src="./portalimg/Portal1.JPG" > -->
-                
-                <div id = "edit">
-                    <a style='color:white' href="/secrets/<%= secrets[idx]._id %>/edit">Edit</a>
-                    <a style='color:white' href="/secrets/<%=secrets[idx]._id%>">Comment</a>
-                </div>
-                <div id="delete">
-                        <form method="POST" action="/secrets/<%= secret._id%>?_method=DELETE">  
-                            <input type="submit" value="Delete Secret"/>
-                        </form>
-                      
+                <div style= "background-image: url(./portalimg/Portal10.JPG)" class="secret_container">
+                <h3  style= 'color: black; text-align: left; font-size: 15px'; >  <%=secrets[idx].category%></h3>
+                <h3  style='color: black;font-size: 25px' > <%=secrets[idx].content%> </h3>
+                <h3  style='color: black' ><%=secret.username.username%></h3>
+            
+                <div id="bottom">
+                    <div id = "edit">
+                        <a style='color:white;' href="/secrets/<%= secrets[idx]._id %>/edit">Edit</a>
+                        <a style='color:white;' href="/secrets/<%=secrets[idx]._id%>">Comment</a>
+                    </div>
+                        
                     </div>
                 </div>
+                </div>
                 <% } %>
+           
     
     </main>
 </body>
