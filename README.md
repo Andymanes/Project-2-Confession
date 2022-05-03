@@ -11,6 +11,7 @@ Self improvement is a skill we all value. Reflecting on our past mistakes improv
 
 Your vulnerability will help encourage others to face with courage those actions that they perceive as shameful.
 
+This site/project is based on the postsecret.com, where people send their secrets and get help from others.
 
 What is it?:
 Users (ananymous) will have the opportunity to create their own confessions as well as comment on other confessions.  
@@ -39,7 +40,7 @@ How-to-use:
 
 Credits:
 - Maria Jimenez
-- Ryan Kirk
+- RJ Kirk
 - Mubarek Hassen
 - Andy Manes
 
