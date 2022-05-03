@@ -42,6 +42,21 @@ How-to-use:
 ![Make-a-confession](https://user-images.githubusercontent.com/102003916/166460420-49aa8b69-3022-42c4-b34d-52b97a3e4888.png)
 
 
+Features Include:
+- User Creation
+- User interaction
+- Comments and Edits
+- Display Page of secrets
+- Secret Creation
+
+Stretch Planned:
+- User Authentication
+- Messaging
+- Profile Page
+- Mobile Responsive
+- Implement filteration
+
+
 Credits:
 - Maria Jimenez
 - RJ Kirk
