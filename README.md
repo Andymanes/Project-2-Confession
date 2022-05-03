@@ -30,10 +30,17 @@ How-to-use:
 - Click "create confession", then determine a category for your confession and type the confession in 500 characters or less
 - Click on a specific confession to leave a comment
 
+
+
+![Screenshot (26)](https://user-images.githubusercontent.com/102003916/166460259-7ac5eea9-8bd1-4332-ad23-7ba7ada04b31.png)
+![Confession wireframe](https://user-images.githubusercontent.com/102003916/166460360-df34fbe3-da25-47ff-87f7-c03499f4d87d.png)
+![Make-a-confession](https://user-images.githubusercontent.com/102003916/166460420-49aa8b69-3022-42c4-b34d-52b97a3e4888.png)
+
+
 Credits:
 - Maria Jimenez
-- RJ *********
-- *** Mubarek Hassen
+- Ryan Kirk
+- Mubarek Hassen
 - Andy Manes
 
 
