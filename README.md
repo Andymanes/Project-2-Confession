@@ -1,7 +1,8 @@
 # Project-2-Confession
 Title:
 Social Healing
-
+[Heroku Link](https://project-confession.herokuapp.com/secrets)
+[Github Link](https://github.com/Mubarek-Hassen/Project-2-Confession)
 Purpose:
 We all have that dark secret we've been dying to get off our chest.
 And now you can. At [include deployment address] you can post a secret for the world to see. You also will be given a chance to see into other people's secret worlds.
